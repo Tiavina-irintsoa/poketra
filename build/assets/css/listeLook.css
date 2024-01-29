@@ -1,0 +1,17 @@
+table {
+    border-collapse: collapse;
+}
+
+th {
+    text-align: center;
+}
+
+th,
+td {
+    padding: .5rem 1rem;
+    border: 1px solid black;
+}
+
+tr:not(:first-child) td:nth-child(2) {
+    text-align: center;
+}

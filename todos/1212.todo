@@ -1,0 +1,42 @@
+Classe Matiere:
+    ☐ idMatiere, nomMatiere
+    ☐ constructeur(Stirng idmatiere)
+    ☐ constructeur(String nomMatiere, int const1)
+    ☐ constructeur(int idMatiere, Stirng nomMatiere)
+       insert(connection)
+    ☐ list(connection)
+Classe look:
+    ☐ idLook, nomLook, 
+    ☐ insert(connection)
+    ☐ list(connection)
+    ☐ constructeur(int idLook, String nomLook)
+
+CLass FicheLook extends Look:
+    ☐ Vector<Matiere> listeMatieres
+    ☐ constructeur(String idLook,String[] listIdMatieres): boucler et appeler la fonction addMatiere
+    ☐ addMatiere(String idmatiere): 
+        ☐ si listeMatieres == null, intancier.
+        ☐ ajouter dans la liste une nouvelle matiere
+    ☐ insertMatiereCOMpatible(connection,Matiere matiere): ajouter dans la table matiere_look
+    ☐ insertMatiereCompatibles(connection): boucler lea liste matiere et appeler la fonction insertMatiereCOmpatible
+    ☐ getMatieres(connection)
+      getMatieresNonCompatible(connection)
+      
+
+AJoutMatiereServlet:
+    ☐ doGet: rediriger vers page ajout matiere
+AJoutMatiereSUbmitServlet:
+    ☐ doPost: instancier une matiere et appeler la fonction insert
+AJoutLookServlet:
+    ☐ doGet: rediriger vers page ajout Look
+AJoutLookSUbmitServlet:
+    ☐ doPost: instancier une Look et appeler la fonction insert
+ListeLookServlet:
+    ☐ doGet: rediriger vers page ajout matiere avec la liste des looks
+AjoutLookMatiereServlet:
+    ☐ doGet: rediriger vers la page ajout matiere compatibles
+AjoutLookMatiereSUbmitServlet:
+    ☐ doPost: instancier une nouvelle matiere, appeler la fonction insertmatierecompatibles
+FIcheLook:
+    ☐ doGet: appeler la fonction list() et rediriger vers ficheLook.jsp
+

@@ -1,0 +1,14 @@
+Types: idtype, nomtype:
+    - static Vector<Type> getAll(connection)
+Dimension: iddimension, nomdimension:
+    - static Vector<Dimension> getAll(connection)
+DetailsFormule: Matiere, quantite: 
+        - insert(connection, type, look, dimension)
+FormuleConfection: type, look, dimension , matiere, quantite, Vector<DetailsFormule>:
+    - constructeur(String type, String look, String dimension, HashMap<string, string>)
+    - insertAll(connection) : boucler detailsformuleinsert()
+FicheMatiere extends Matiere : Vector<FormuleConfection>:
+    - constructeur(string) 
+    - Vector<FormuleConfection> getFormuleConfection(connection)
+    - completeData(connection)
+    

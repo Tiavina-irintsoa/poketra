@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+  version="3.1"
+  metadata-complete="true">
+  
+  <servlet>
+        <servlet-name>EtatStockMatiereServlet</servlet-name>
+        <servlet-class>servlets.EtatStockMatiereServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EtatStockMatiereServlet</servlet-name>
+        <url-pattern>/etatStockMatiere</url-pattern>
+    </servlet-mapping>
+      
+
+
+
+    <servlet>
+        <servlet-name>ClassementSacServlet</servlet-name>
+        <servlet-class>servlets.ClassementSacServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClassementSacServlet</servlet-name>
+        <url-pattern>/classementSac</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>StatVenteGlobalServlet</servlet-name>
+        <servlet-class>servlets.StatVenteGlobalServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StatVenteGlobalServlet</servlet-name>
+        <url-pattern>/statVenteGlobal</url-pattern>
+    </servlet-mapping>
+  <servlet>
+        <servlet-name>VenteSubmitServlet</servlet-name>
+        <servlet-class>servlets.VenteSubmitServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VenteSubmitServlet</servlet-name>
+        <url-pattern>/VenteSubmit</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>VenteServlet</servlet-name>
+        <servlet-class>servlets.VenteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VenteServlet</servlet-name>
+        <url-pattern>/vente</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListClientServlet</servlet-name>
+        <servlet-class>servlets.ListClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListClientServlet</servlet-name>
+        <url-pattern>/listClient</url-pattern>
+    </servlet-mapping>
+        <servlet>
+        <servlet-name>AjoutClientServlet</servlet-name>
+        <servlet-class>servlets.AjoutClientServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutClientServlet</servlet-name>
+        <url-pattern>/ajoutClient</url-pattern>
+    </servlet-mapping>
+        <servlet>
+        <servlet-name>AjoutClientSubmit</servlet-name>
+        <servlet-class>servlets.AjoutClientSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutClientSubmit</servlet-name>
+        <url-pattern>/ajoutClientSubmit</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ajoutProfilServlet</servlet-name>
+        <servlet-class>servlets.AjoutProfilServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ajoutProfilServlet</servlet-name>
+        <url-pattern>/ajoutProfilServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>StatParGenreServlet</servlet-name>
+        <servlet-class>servlets.StatParGenreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StatParGenreServlet</servlet-name>
+        <url-pattern>/statParGenre</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ajoutProfilSubmit</servlet-name>
+        <servlet-class>servlets.AjoutProfilSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ajoutProfilSubmit</servlet-name>
+        <url-pattern>/ajoutProfilSubmit</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>tauxHoraireServlet</servlet-name>
+        <servlet-class>servlets.TauxHoraireServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tauxHoraireServlet</servlet-name>
+        <url-pattern>/tauxHoraireServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ajoutTauxHoraireBaseSubmit</servlet-name>
+        <servlet-class>servlets.TauxHoraireSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ajoutTauxHoraireBaseSubmit</servlet-name>
+        <url-pattern>/ajoutTauxHoraireBaseSubmit</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>listEmployer</servlet-name>
+        <servlet-class>servlets.listEmployerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>listEmployer</servlet-name>
+        <url-pattern>/listEmployer</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ajoutEmployerServlet</servlet-name>
+        <servlet-class>servlets.AjoutEmployerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ajoutEmployerServlet</servlet-name>
+        <url-pattern>/ajoutEmployerServlet</url-pattern>
+
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ajoutEmployerSubmit</servlet-name>
+        <servlet-class>servlets.AjoutEmployerSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ajoutEmployerSubmit</servlet-name>
+        <url-pattern>/ajoutEmployerSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ajoutMultiplicateurServlet</servlet-name>
+        <servlet-class>servlets.AjouterMultiplicateurServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ajoutMultiplicateurServlet</servlet-name>
+        <url-pattern>/ajoutMultiplicateurServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ajoutMultiplicateurSubmit</servlet-name>
+        <servlet-class>servlets.AjouterMultiplicateurSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ajoutMultiplicateurSubmit</servlet-name>
+        <url-pattern>/ajoutMultiplicateurSubmit</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>AjoutTypeRH</servlet-name>
+        <servlet-class>servlets.AjoutTypeRH</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutTypeRH</servlet-name>
+        <url-pattern>/rh</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AjoutSac</servlet-name>
+        <servlet-class>servlets.AjoutSac</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutSac</servlet-name>
+        <url-pattern>/ajoutSac</url-pattern>
+    </servlet-mapping>
+        <servlet>
+        <servlet-name>AjoutSacSubmit</servlet-name>
+        <servlet-class>servlets.AjoutSacSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutSacSubmit</servlet-name>
+        <url-pattern>/ajoutSacSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ajouttauxHoraireSubmit</servlet-name>
+        <servlet-class>servlets.ajoutTauxHoraireSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ajouttauxHoraireSubmit</servlet-name>
+        <url-pattern>/ajouttauxHoraireSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>benefice</servlet-name>
+        <servlet-class>servlets.RechercheBenefice</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>benefice</servlet-name>
+        <url-pattern>/benefice</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>beneficeSubmit</servlet-name>
+        <servlet-class>servlets.ListeBeneficeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>beneficeSubmit</servlet-name>
+        <url-pattern>/beneficeSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>prixDeVente</servlet-name>
+        <servlet-class>servlets.PrixDeVenteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>prixDeVente</servlet-name>
+        <url-pattern>/prixDeVente</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>prixDeVenteSubmit</servlet-name>
+        <servlet-class>servlets.PrixDeVenteSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>prixDeVenteSubmit</servlet-name>
+        <url-pattern>/prixDeVenteSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>personneStandard</servlet-name>
+        <servlet-class>servlets.PersonneStandrardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>personneStandard</servlet-name>
+        <url-pattern>/personneStandard</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>personneStandardSubmit</servlet-name>
+        <servlet-class>servlets.PersonneStandardSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>personneStandardSubmit</servlet-name>
+        <url-pattern>/personneStandardSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>dureeTypeSubmit</servlet-name>
+        <servlet-class>servlets.DureeParTypeSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dureeTypeSubmit</servlet-name>
+        <url-pattern>/dureeTypeSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>dureeType</servlet-name>
+        <servlet-class>servlets.DureeParTypeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dureeType</servlet-name>
+        <url-pattern>/dureeType</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ajoutFournisseur</servlet-name>
+        <servlet-class>servlets.AjoutFournisseurServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ajoutFournisseur</servlet-name>
+        <url-pattern>/ajoutFournisseur</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ajoutFournisseurSubmit</servlet-name>
+        <servlet-class>servlets.AjoutFournisseurSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ajoutFournisseurSubmit</servlet-name>
+        <url-pattern>/ajoutFournisseurSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>fabricationSac</servlet-name>
+        <servlet-class>servlets.FabricationSac</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fabricationSac</servlet-name>
+        <url-pattern>/fabricationSac</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>fabricationSacSubmit</servlet-name>
+        <servlet-class>servlets.FabricationSacSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fabricationSacSubmit</servlet-name>
+        <url-pattern>/fabricationSacSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>achatMatiere</servlet-name>
+        <servlet-class>servlets.AchatMatiereServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>achatMatiere</servlet-name>
+        <url-pattern>/achatMatiere</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>achatMatiereSubmit</servlet-name>
+        <servlet-class>servlets.AchatMatiereSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>achatMatiereSubmit</servlet-name>
+        <url-pattern>/achatMatiereSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChangerPrix</servlet-name>
+        <servlet-class>servlets.ChangerPrix</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangerPrix</servlet-name>
+        <url-pattern>/ChangerPrix</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChangerPrixSubmit</servlet-name>
+        <servlet-class>servlets.ChangerPrixSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangerPrixSubmit</servlet-name>
+    <url-pattern>/ChangerPrixSubmit</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListeTriePrix</servlet-name>
+        <servlet-class>servlets.ListeTriePrixServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListeTriePrix</servlet-name>
+        <url-pattern>/ListeTriePrix</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TrieParPrix</servlet-name>
+        <servlet-class>servlets.FicheTrieParPrixServelet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TrieParPrix</servlet-name>
+        <url-pattern>/TriePrix</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjoutTypeSubmit</servlet-name>
+        <servlet-class>servlets.AjoutTypeSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutTypeSubmit</servlet-name>
+        <url-pattern>/ajoutTypeSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjoutTypeServlet</servlet-name>
+        <servlet-class>servlets.AjoutTypeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutTypeServlet</servlet-name>
+        <url-pattern>/ajoutType</url-pattern>
+    </servlet-mapping>
+
+   <servlet>
+        <servlet-name>AjoutFormuleSubmitServlet</servlet-name>
+        <servlet-class>servlets.AjoutFormuleSubmitServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutFormuleSubmitServlet</servlet-name>
+        <url-pattern>/ajoutFormuleSubmit</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AjoutFormuleServlet</servlet-name>
+        <servlet-class>servlets.AjoutFormuleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutFormuleServlet</servlet-name>
+        <url-pattern>/ajoutFormule</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListMatiereServlet</servlet-name>
+        <servlet-class>servlets.ListMatiereServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListMatiereServlet</servlet-name>
+        <url-pattern>/listeMatiere</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FicheMatiereServlet</servlet-name>
+        <servlet-class>servlets.FicheMatiereServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FicheMatiereServlet</servlet-name>
+        <url-pattern>/ficheMatiere</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>AJoutMatiereServlet</servlet-name>
+        <servlet-class>servlets.AJoutMatiereServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AJoutMatiereServlet</servlet-name>
+        <url-pattern>/ajoutMatiere</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjoutLookServlet</servlet-name>
+        <servlet-class>servlets.AjoutLookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutLookServlet</servlet-name>
+        <url-pattern>/ajoutLook</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AjoutLookSubmitServlet</servlet-name>
+        <servlet-class>servlets.AjoutLookSubmitServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutLookSubmitServlet</servlet-name>
+        <url-pattern>/ajoutLookSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjoutMatiereSubmit</servlet-name>
+        <servlet-class>servlets.AjoutMatiereSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutMatiereSubmit</servlet-name>
+        <url-pattern>/ajoutMatiereSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListeLookServlet</servlet-name>
+        <servlet-class>servlets.ListeLookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListeLookServlet</servlet-name>
+        <url-pattern>/listeLook</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ListeTypeServlet</servlet-name>
+        <servlet-class>servlets.ListeTypeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListeTypeServlet</servlet-name>
+        <url-pattern>/listeType</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjoutMatiereCompatible</servlet-name>
+        <servlet-class>servlets.AjoutMatiereCompatibleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutMatiereCompatible</servlet-name>
+        <url-pattern>/ajoutMatiereCompatible</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>FicheLookServlet</servlet-name>
+        <servlet-class>servlets.FicheLookServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FicheLookServlet</servlet-name>
+        <url-pattern>/ficheLook</url-pattern>
+    </servlet-mapping>
+
+     <servlet>
+        <servlet-name>AjoutMatiereCompatibleSubmitServlet</servlet-name>
+        <servlet-class>servlets.AjoutMatiereCompatibleSubmitServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AjoutMatiereCompatibleSubmitServlet</servlet-name>
+        <url-pattern>/ajoutMatiereCompatibleSubmit</url-pattern>
+    </servlet-mapping>
+</web-app>
