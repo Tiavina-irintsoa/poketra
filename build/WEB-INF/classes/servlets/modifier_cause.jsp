@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="mapping.*" %>
-<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html lang="en">
-<%
-    Vector<Matiere> matieres= (Vector<Matiere>)request.getAttribute("matieres");
-    Vector<Fournisseur> f= (Vector<Fournisseur>)request.getAttribute("fournisseurs");
-%>
 <head>
     <head>
         <meta charset="utf-8" />
@@ -58,64 +52,28 @@
                 <!-- Content -->
 
                 <div class="container-xxl flex-grow-1 container-p-y">
-                    <h4 class="py-3 mb-6"><span class="text-muted fw-light"></span> Achat de matiere premiere</h4>
+                    <h4 class="py-3 mb-6"><span class="text-muted fw-light"></span>Modifier une cause de pénalisation</h4>
                     <div class="row">
 
                         <div class="col-md-12">
                             <div class="card mb-12">
                                 <div class="card-header d-flex align-items-center justify-content-between">
-                                    <h5 class="mb-0">Achat de matiere</h5>
+                                    <h5 class="mb-0">Modifier la valeur</h5>
                                 </div>
                                 <div class="card-body">
-                                    <form action="achatMatiereSubmit" method="post" class="form">
-
-                                        <div class="row mb-3">
-                                            <div class="input-group">
-                                                <label class="input-group-text" for="inputGroupSelect03">Matiere</label>
-                                                <select class="form-select" id="inputGroupSelect03" name="matiere">
-                                                    <%
-                                                        for (int i = 0;i<matieres.size();i++){ %>
-                                                    <option value="<%= matieres.get(i).getIdMatiere() %>"><%= matieres.get(i).getNomMatiere() %></option>
-                                                    <%    }
-                                                    %>
-
-                                                </select>
-                                            </div>
-                                        </div>
-
-
-                                        <label class="col-sm-2 col-form-label" for="qte">Quantite</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="qte"  name="quantite">
-                                        </div>
-                                        <label class="col-sm-2 col-form-label" for="qte">Prix unitaire</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="qte"  name="prix">
-                                        </div>
-                                        <label class="col-sm-2 col-form-label" for="qte">Qualite moyenne /10</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="qte"  name="qualite">
-                                        </div>
-
-                                        <label class="col-sm-2 col-form-label" for="date">Date</label>
-                                        <div class="col-sm-10">
-                                            <input type="date" class="form-control" id="date"  name="date">
-                                        </div>
+                                    <form action="modifierCauseSubmit" method="post" class="form">
 
                                         <div class="input-group">
-                                                <label class="input-group-text" for="inputGroupSelect03">Fournisseur</label>
-                                                <select class="form-select" id="inputGroupSelect03" name="frns">
-                                                    <%
-                                                        for (int i = 0;i<f.size();i++){ %>
-                                                    <option value="<%= f.get(i).getIdFournisseur()%>"><%= f.get(i).getNom() %></option>
-                                                    <%    }
-                                                    %>
-
-                                                </select>
+                                            <label class="col-sm-2 col-form-label" for="nom">Penalité/10:</label>
+                                            <div class="col-sm-10">
+                                                <input type="number" class="form-control" id="nom" placeholder="Penalisation..."  name="valeur"/>
                                             </div>
+                                        </div>
+                                        <% String cause = (String) request.getAttribute("cause") %>
+                                        <input type="hidden" name="idCause" value="<%= cause %>">
                                         <div class="row justify-content-end">
                                             <div class="col-sm-10">
-                                                <button type="submit" class="btn btn-primary mt-3">Valider</button>
+                                                <button type="submit" class="btn btn-primary mt-3">Modifier</button>
                                             </div>
                                         </div>
                                     </form>

@@ -44,80 +44,65 @@
 </head>
 
 <body>
-<header></header>
-<%
-    Vector<Matiere> matieres= (Vector<Matiere>)request.getAttribute("matieres");
-%>
+    <header></header>
+    <%  
+        Vector<Fournisseur> fournisseurs= (Vector<Fournisseur>)request.getAttribute("liste");
+    %>
 
-<main>
-     <div class="layout-wrapper layout-content-navbar">
+    <main>
+         <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
         <%@ include file="navbar.jsp"%>
-    <div class="content-wrapper">
 
+        <div class="content-wrapper">
+            <!-- Content -->
 
-        <!-- Content -->
+            <div class="container-xxl flex-grow-1 container-p-y">
+                <h4 class="py-3 mb-4"><span class="text-muted fw-light">Fournisseurs /</span> Liste</h4>
 
-        <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="py-3 mb-4"><span class="text-muted fw-light">Matieres /</span> Liste</h4>
-
-            <!-- Basic Bootstrap Table -->
-            <div class="card">
-                <h5 class="card-header">Matieres</h5>
-
-                <form action="listeMatiere" method="get" class="form">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2" name="matiere">
-                        <input class="btn btn-outline-primary" type="submit" id="button-addon2" value="Rechercher"></input>
-                    </div>
-                </form>
-
-                <div class="card-body">
+                <!-- Basic Bootstrap Table -->
+                <div class="card">
+                    <h5 class="card-header"></h5>
+                    <div class="card-body">
                         <div class="table-responsive text-nowrap">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Reste</th>
-                            <th></th>
-                            <th></th>
-                            
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Contact</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody class="table-border-bottom-0">
+                            <%
+                                for(Fournisseur  f : fournisseurs) {%>
+                            <tr>
+                                <td><%=f.getNom()%></td>
+                                <td>
+                                    <%= f.getContact() %>
+                                </td>
+                                <td>
+                                    <span class="fw-medium"><a href="penaliser?fournisseur=<%= f.getIdFournisseur() %>">Pénalisation</a></span>
+                                </td>
+                            </tr>
+                            <%
+                                }
+                            %>
 
-
-                        </tr>
-                        </thead>
-                        <tbody class="table-border-bottom-0">
-                        <%
-                            for (Matiere matiere : matieres) {%>
-                        <tr>
-                            <td><%=matiere.getNomMatiere()%></td>
-                            <td>
-                                <%=matiere.getStock()%>
-                            </td>
-                            <td>
-                                <span class="fw-medium"><a href="ficheMatiere?matiere=<%=matiere.getIdMatiere() %>">Voir details</a></span>
-                            </td>
-                           
-                            
-                        </tr>
-                        <%
-                            }
-                        %>
-
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
 </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-</main>
+        </div>
+        </div>
+    </main>
 
-<footer></footer>
+    <footer></footer>
 
-<script src="assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="assets/vendor/libs/jquery/jquery.js"></script>
 <script src="assets/vendor/libs/popper/popper.js"></script>
 <script src="assets/vendor/js/bootstrap.js"></script>
 <script src="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>

@@ -4,6 +4,10 @@ public class Fournisseur {
     int idFournisseur;
     String nom;
     String contact;
+    public Fournisseur(int idFournisseur, String nom) {
+        this.idFournisseur = idFournisseur;
+        this.nom = nom;
+    }
     public Fournisseur(String idfournisseur){
         setIdFournisseur(idfournisseur);
     }
@@ -35,4 +39,5 @@ public class Fournisseur {
         this.nom = nom;
         this.contact = contact;
     }
+
 }

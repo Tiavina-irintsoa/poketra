@@ -6,17 +6,19 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import mapping.Matiere;
+import mapping.ValeurPenalisation;
 
-public class AjoutMatiereSubmit extends HttpServlet{
+public class ModifierCauseSubmit extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String idCause = req.getParameter("idCause");
+        String newValue = req.getParameter("valeur");
+        ValeurPenalisation nouvelle = new ValeurPenalisation(idCause, newValue);
         try {
-            String nom = req.getParameter("nom");
-            Matiere matiere=new Matiere(nom);
-            matiere.insert(null);
-            resp.sendRedirect("ajoutMatiere");
+            nouvelle.insert();
+            resp.sendRedirect("listCause");
         } catch (Exception e) {
+
             e.printStackTrace();
         }
     }

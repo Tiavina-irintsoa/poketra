@@ -3,10 +3,6 @@
 <%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html lang="en">
-<%
-    Vector<Matiere> matieres= (Vector<Matiere>)request.getAttribute("matieres");
-    Vector<Fournisseur> f= (Vector<Fournisseur>)request.getAttribute("fournisseurs");
-%>
 <head>
     <head>
         <meta charset="utf-8" />
@@ -58,66 +54,39 @@
                 <!-- Content -->
 
                 <div class="container-xxl flex-grow-1 container-p-y">
-                    <h4 class="py-3 mb-6"><span class="text-muted fw-light"></span> Achat de matiere premiere</h4>
+                    <h4 class="py-3 mb-6"><span class="text-muted fw-light"></span>Penaliser un fournisseur</h4>
                     <div class="row">
-
+    <%  
+        Vector<CausePenalisation> causes= (Vector<CausePenalisation>)request.getAttribute("causes");
+    %>
                         <div class="col-md-12">
                             <div class="card mb-12">
                                 <div class="card-header d-flex align-items-center justify-content-between">
-                                    <h5 class="mb-0">Achat de matiere</h5>
+                                    <h5 class="mb-0"> Pénaliser un fournisseur</h5>
                                 </div>
                                 <div class="card-body">
-                                    <form action="achatMatiereSubmit" method="post" class="form">
+                                    <form action="penaliserSubmit" method="post" class="form">
 
-                                        <div class="row mb-3">
-                                            <div class="input-group">
-                                                <label class="input-group-text" for="inputGroupSelect03">Matiere</label>
-                                                <select class="form-select" id="inputGroupSelect03" name="matiere">
-                                                    <%
-                                                        for (int i = 0;i<matieres.size();i++){ %>
-                                                    <option value="<%= matieres.get(i).getIdMatiere() %>"><%= matieres.get(i).getNomMatiere() %></option>
-                                                    <%    }
-                                                    %>
-
-                                                </select>
+                                      <div class="input-group mb-3">
+                                        <label class="input-group-text" for="inputGroupSelect01">Raison</label>
+                                        <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" name="cause">
+                        <%
+                                            for (int i = 0;i<causes.size();i++){ %>
+                                                <option value="<%= causes.get(i).getIdCause() %>"><%= causes.get(i).getCause() %></option>
+                                            <%    } %>
+                                        </select>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                                <input type="date" class="form-control" id="date"  name="date"/>
                                             </div>
-                                        </div>
-
-
-                                        <label class="col-sm-2 col-form-label" for="qte">Quantite</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="qte"  name="quantite">
-                                        </div>
-                                        <label class="col-sm-2 col-form-label" for="qte">Prix unitaire</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="qte"  name="prix">
-                                        </div>
-                                        <label class="col-sm-2 col-form-label" for="qte">Qualite moyenne /10</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="qte"  name="qualite">
-                                        </div>
-
-                                        <label class="col-sm-2 col-form-label" for="date">Date</label>
-                                        <div class="col-sm-10">
-                                            <input type="date" class="form-control" id="date"  name="date">
-                                        </div>
-
-                                        <div class="input-group">
-                                                <label class="input-group-text" for="inputGroupSelect03">Fournisseur</label>
-                                                <select class="form-select" id="inputGroupSelect03" name="frns">
-                                                    <%
-                                                        for (int i = 0;i<f.size();i++){ %>
-                                                    <option value="<%= f.get(i).getIdFournisseur()%>"><%= f.get(i).getNom() %></option>
-                                                    <%    }
-                                                    %>
-
-                                                </select>
-                                            </div>
+                                        <% String fournisseur = (String) request.getAttribute("fournisseur") ;%>
+                                        <input type="hidden" name="fournisseur" value="<%= fournisseur %>">
                                         <div class="row justify-content-end">
                                             <div class="col-sm-10">
                                                 <button type="submit" class="btn btn-primary mt-3">Valider</button>
                                             </div>
                                         </div>
+
                                     </form>
                                 </div>
                             </div>

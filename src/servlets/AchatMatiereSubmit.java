@@ -18,8 +18,9 @@ public class AchatMatiereSubmit extends HttpServlet {
             String date = req.getParameter("date");
             String frns=req.getParameter("frns");
             String prix = req.getParameter("prix");
+            String qualite = req.getParameter("qualite");
             
-            MouvementStockMatiere utilisationMatiere = new MouvementStockMatiere(matieres, date, quantiter, frns, prix);
+            MouvementStockMatiere utilisationMatiere = new MouvementStockMatiere(matieres, date, quantiter, frns, prix,qualite);
             utilisationMatiere.insert(null);
             resp.sendRedirect("achatMatiere");
         } catch (Exception e) {

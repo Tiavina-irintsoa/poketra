@@ -68,12 +68,7 @@
                                             <input type="text" class="form-control" id="nom" placeholder="Nouvelle matiere" name="nom" />
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <label class="col-sm-2 col-form-label" for="nom">Prix unitaire:</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="nom" placeholder="Nouvelle matiere" name="prix" />
-                                        </div>
-                                    </div>
+                                    
                                     <div class="row justify-content-end">
                                         <div class="col-sm-10">
                                             <button type="submit" class="btn btn-primary mt-3">Send</button>

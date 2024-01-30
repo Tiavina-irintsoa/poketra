@@ -1,5 +1,3 @@
-
-
 create function f_min_annee_vente()
 returns table (
     year numeric
@@ -47,4 +45,5 @@ BEGIN
     return ;
 end;
 $$ LANGUAGE plpgsql;
- 
+
+

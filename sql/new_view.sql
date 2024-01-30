@@ -8,11 +8,13 @@ CREATE OR REPLACE VIEW v_liste_matiere_look AS(
         on ml.id_matiere=m.id_matiere
 );
 
+
 CREATE OR REPLACE VIEW v_all_possibilites_matiere_look AS (
     SELECT 
     * 
     FROM Look,Matiere
 );
+
 CREATE OR REPLACE VIEW v_liste_matier_look_non_compatible AS(
     SELECT
     vall.id_look,vall.nom_look,vall.id_matiere,vall.nom_matiere
@@ -131,7 +133,7 @@ create or replace view v_benefice as (
         on v_cout_sac.id_sac  = sac.id_sac
 );
 ---
-create view v_max_date_param_profil as(
+create  or replace view v_max_date_param_profil as(
     select 
     id_profil, max(date) as date
     from 
@@ -270,3 +272,45 @@ create or replace view v_benefice_vente_all as (
     from v_benefice_vente_sac
 );
 
+create or replace view v_penalite_fournisseur as (
+    select
+    fournisseur.id_fournisseur, fournisseur.nom_fournisseur, coalesce(sum(valeur),0) as penalite
+    from fournisseur
+    left join penalisation
+        on penalisation.id_fournisseur = fournisseur.id_fournisseur
+    group by fournisseur.id_fournisseur, nom_fournisseur
+);
+create or replace view v_qualite_fournisseur_produit as(
+    select 
+    id_matiere, id_fournisseur, sum(qualite* quantite_plus)/sum(quantite_plus) as qualite, sum(prix_unitaire*quantite_plus)/sum(quantite_plus) as prix_unitaire, coalesce(stddev(qualite),0) as variation
+    from mouvement_stock 
+    group by id_matiere, id_fournisseur
+);
+
+create or replace view v_fournisseur_matiere as (
+    select
+    matiere.id_matiere, matiere.nom_matiere, v_qualite_fournisseur_produit.qualite, v_penalite_fournisseur.penalite,v_penalite_fournisseur.id_fournisseur,v_penalite_fournisseur.nom_fournisseur, v_qualite_fournisseur_produit.prix_unitaire, v_qualite_fournisseur_produit.variation
+    from matiere
+    join v_qualite_fournisseur_produit
+        on v_qualite_fournisseur_produit.id_matiere = matiere.id_matiere
+    join v_penalite_fournisseur
+        on v_penalite_fournisseur.id_fournisseur = v_qualite_fournisseur_produit.id_fournisseur
+);
+create or replace view v_fournisseur_matiere_all as(
+    select 
+    matiere.*, fournisseur.*, 0 as qualite, 0 as rapport_qualite_prix, 0 as qualite_service, 0 as qualite_variation, 0 as prix_unitaire
+    from matiere, v_penalite_fournisseur as fournisseur
+);
+create or replace view v_fournisseur_matiere_rapport as(
+    select 
+    id_matiere,nom_matiere,qualite, penalite, qualite/prix_unitaire as rapport_qualite_prix , qualite / greatest(1.,penalite) as qualite_service, id_fournisseur, nom_fournisseur, qualite/greatest(1.,variation) as qualite_variation,prix_unitaire
+    from v_fournisseur_matiere
+);
+create or replace view v_fournisseur_matiere_all_rapport as(
+    select
+    tous.id_fournisseur, tous.id_matiere,tous.nom_matiere,tous.nom_fournisseur, greatest(tous.qualite, existing.qualite) as qualite, tous.penalite as penalite, greatest(tous.rapport_qualite_prix, existing.rapport_qualite_prix) as rapport_qualite_prix, greatest(tous.qualite_service, existing.qualite_service) as qualite_service, greatest(tous.qualite_variation, existing.qualite_variation) as qualite_variation, greatest(tous.prix_unitaire, existing.prix_unitaire) as prix_unitaire
+    from v_fournisseur_matiere_all as tous
+    left join v_fournisseur_matiere_rapport as existing
+        on tous.id_fournisseur = existing.id_fournisseur
+        and tous.id_matiere = existing.id_matiere
+);

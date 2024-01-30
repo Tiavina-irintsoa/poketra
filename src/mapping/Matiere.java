@@ -13,11 +13,7 @@ public class Matiere {
     String nomMatiere;
     double prix;
     double stock;
-    public Matiere(int idMatiere, String nomMatiere, double prix) {
-        this.idMatiere = idMatiere;
-        this.nomMatiere = nomMatiere;
-        this.prix = prix;
-    }
+
     public int getIdMatiere() {
         return idMatiere;
     }
@@ -80,7 +76,7 @@ public class Matiere {
         Connect myConnect=new Connect();
         connect=myConnect.getConnectionPostgresql();
     }
-        String sql = "insert into prix_unitaire values (default, ?, ?, now())";
+        String sql = "insert into prix_unitaire values (default, ?, now())";
         PreparedStatement state=connect.prepareStatement(sql);
         state.setInt(1, idMatiere);
         state.setDouble(2, getPrix());

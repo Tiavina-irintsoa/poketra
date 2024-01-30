@@ -82,6 +82,12 @@
         <i class="menu-icon tf-icons bx bx-envelope"></i>
         <div data-i18n="Email">Classement des sacs</div>
       </a>
+      <a
+              href="classementFournisseur?classement=0&matiere=2"
+              class="menu-link">
+        <i class="menu-icon tf-icons bx bx-envelope"></i>
+        <div data-i18n="Email">Classement des fournisseurs</div>
+      </a>
     </li>
      <li class="menu-header small text-uppercase">
       <span class="menu-header-text">Stock</span>
@@ -263,17 +269,6 @@
       <span class="menu-header-text">Paramètres</span>
     </li>
     <!-- Apps -->
-
-   
-    <li class="menu-item">
-
-      <a
-              href="ajoutFournisseur"
-              class="menu-link">
-        <i class="menu-icon tf-icons bx bx-envelope"></i>
-        <div data-i18n="Email">Ajouter un fournisseur</div>
-      </a>
-    </li>
      <li class="menu-item">
 
       <a
@@ -284,11 +279,7 @@
       </a>
     </li>
 
-   
-
-   
-
-    <li class="menu-item">
+     <li class="menu-item">
 
       <a
               href="ajoutFormule"
@@ -297,6 +288,60 @@
         <div data-i18n="Email">Confectionner</div>
       </a>
     </li>
+     <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-store"></i>
+        <div data-i18n="Front Pages">Pénalisation</div>
+
+      </a>
+      <ul class="menu-sub">
+        <li class="menu-item">
+          <a
+                  href="ajoutCausePenalisation"
+                  class="menu-link"
+          >
+            <div data-i18n="Landing">Ajouter une pénalisation</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a
+                  href="listCause"
+                  class="menu-link"
+          >
+            <div data-i18n="Pricing">Liste des pénalités</div>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="menu-item">
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon tf-icons bx bx-store"></i>
+        <div data-i18n="Front Pages">Fournisseur</div>
+
+      </a>
+      <ul class="menu-sub">
+      <li class="menu-item">
+          <a
+                  href="ajoutFournisseur"
+                  class="menu-link"
+          >
+            <div data-i18n="Pricing">Ajouter un fournisseur</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a
+                  href="listFournisseur"
+                  class="menu-link"
+          >
+            <div data-i18n="Landing">Liste des fournisseurs</div>
+          </a>
+        </li>
+        
+      </ul>
+    </li>
+   
+
+   
     <li class="menu-item">
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-store"></i>

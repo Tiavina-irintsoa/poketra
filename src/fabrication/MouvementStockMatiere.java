@@ -14,17 +14,19 @@ public class MouvementStockMatiere {
     double quantiteEnMoins;
     double prixUnitaire;
     Date date;
+    int qualite;
     Fournisseur fournisseur;
     public Matiere getMatiere() {
         return matiere;
     }
-    public MouvementStockMatiere(String matiere, String date, String quantitePlus,String idfournisseur, String prix){
+    public MouvementStockMatiere(String matiere, String date, String quantitePlus,String idfournisseur, String prix, String qualite){
         setMatiere(new Matiere(matiere));
         setDate(Date.valueOf(date));
         setQuantiteEnPlus(quantitePlus);
         System.out.println(idfournisseur);
         setFournisseur(new Fournisseur(idfournisseur));
         setPrixUnitaire(Double.valueOf(prix));
+        setQualite(Integer.valueOf(qualite));
     }
     public void setQuantiteEnPlus(String quantitePlus) {
         setQuantiteEnPlus(Double.valueOf(quantitePlus));
@@ -37,7 +39,7 @@ public class MouvementStockMatiere {
             connect=myConnect.getConnectionPostgresql();
         }
 
-        String sql = "insert into mouvement_stock (id_mouvement, id_matiere, quantite_plus,quantite_moins,date,prix_unitaire,id_fournisseur) values (default, ?, ?,?,?, ?,?)";
+        String sql = "insert into mouvement_stock (id_mouvement, id_matiere, quantite_plus,quantite_moins,date,prix_unitaire,id_fournisseur,qualite) values (default, ?, ?,?,?, ?,?,?)";
         PreparedStatement state=connect.prepareStatement(sql);
         state.setInt(1, matiere.getIdMatiere());
         state.setDouble(2, getQuantiteEnPlus());
@@ -52,6 +54,7 @@ public class MouvementStockMatiere {
         else if(getFournisseur()!=null){
             state.setInt(6,getFournisseur().getIdFournisseur());
         }
+        state.setInt(7, qualite);
         try {
             state.executeUpdate();
             if (connexionOuvert) {
@@ -108,6 +111,12 @@ public class MouvementStockMatiere {
     }
     public void setFournisseur(Fournisseur fournisseur) {
         this.fournisseur = fournisseur;
+    }
+    public int getQualite() {
+        return qualite;
+    }
+    public void setQualite(int qualite) {
+        this.qualite = qualite;
     }
 
 }

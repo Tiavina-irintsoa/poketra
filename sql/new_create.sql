@@ -58,6 +58,7 @@ create table mouvement_stock(
   prix_unitaire numeric,
   id_fournisseur INTEGER references fournisseur(id_fournisseur) 
 );
+alter table mouvement_stock add column qualite integer default 0;
 
 create table fabrication(
     id_fabrication serial primary key, 
@@ -134,3 +135,23 @@ create table details_vente (
 create table mois(
   mois integer
 );
+
+create table cause_penalisation (
+  id_cause serial primary key,
+  cause varchar, 
+  valeur_actuelle integer
+);
+
+create table valeur_penalisation (
+  id_cause integer references cause_penalisation(id_cause),
+  valeur integer,
+  date timestamp
+);
+
+create table penalisation(
+  id_fournisseur integer references fournisseur(id_fournisseur),
+  id_cause integer references cause_penalisation(id_cause),
+  valeur integer,
+  date date
+);
+

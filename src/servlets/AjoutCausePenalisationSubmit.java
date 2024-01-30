@@ -6,16 +6,17 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import mapping.Matiere;
+import mapping.CausePenalisation;
 
-public class AjoutMatiereSubmit extends HttpServlet{
+public class AjoutCausePenalisationSubmit extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            String nom = req.getParameter("nom");
-            Matiere matiere=new Matiere(nom);
-            matiere.insert(null);
-            resp.sendRedirect("ajoutMatiere");
+            String valeur = req.getParameter("valeur");
+            String cause = req.getParameter("cause");
+            CausePenalisation nouvelle = new CausePenalisation(cause, valeur);
+            nouvelle.insert();
+            resp.sendRedirect("ajoutCausePenalisation");
         } catch (Exception e) {
             e.printStackTrace();
         }

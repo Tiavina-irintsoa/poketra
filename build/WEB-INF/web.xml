@@ -14,8 +14,90 @@
         <servlet-name>EtatStockMatiereServlet</servlet-name>
         <url-pattern>/etatStockMatiere</url-pattern>
     </servlet-mapping>
-      
 
+     
+  <servlet>
+        <servlet-name>PenaliserSubmit</servlet-name>
+        <servlet-class>servlets.PenaliserSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PenaliserSubmit</servlet-name>
+        <url-pattern>/penaliserSubmit</url-pattern>
+    </servlet-mapping>
+
+      <servlet>
+        <servlet-name>ClassementFournisseurServlet</servlet-name>
+        <servlet-class>servlets.ClassementFournisseurServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClassementFournisseurServlet</servlet-name>
+        <url-pattern>/classementFournisseur</url-pattern>
+    </servlet-mapping>
+
+
+  <servlet>
+        <servlet-name>PenaliserServlet</servlet-name>
+        <servlet-class>servlets.PenaliserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PenaliserServlet</servlet-name>
+        <url-pattern>/penaliser</url-pattern>
+    </servlet-mapping>
+
+      <servlet>
+        <servlet-name>ModifierCauseSubmit</servlet-name>
+        <servlet-class>servlets.ModifierCauseSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModifierCauseSubmit</servlet-name>
+        <url-pattern>/modifierCauseSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListFournisseurServlet</servlet-name>
+        <servlet-class>servlets.ListFournisseurServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListFournisseurServlet</servlet-name>
+        <url-pattern>/listFournisseur</url-pattern>
+    </servlet-mapping>
+
+      
+  <servlet>
+        <servlet-name>ListeCausePenalisation</servlet-name>
+        <servlet-class>servlets.ListeCausePenalisation</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListeCausePenalisation</servlet-name>
+        <url-pattern>/listCause</url-pattern>
+    </servlet-mapping>
+
+      <servlet>
+        <servlet-name>ModifierCauseServlet</servlet-name>
+        <servlet-class>servlets.ModifierCauseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModifierCauseServlet</servlet-name>
+        <url-pattern>/modifierCause</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjoutCausePenalisationSubmit</servlet-name>
+        <servlet-class>servlets.AjoutCausePenalisationSubmit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutCausePenalisationSubmit</servlet-name>
+        <url-pattern>/ajoutCausePenalisationSubmit</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AjoutCausePenalisation</servlet-name>
+        <servlet-class>servlets.AjoutCausePenalisation</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjoutCausePenalisation</servlet-name>
+        <url-pattern>/ajoutCausePenalisation</url-pattern>
+    </servlet-mapping>
 
 
     <servlet>
